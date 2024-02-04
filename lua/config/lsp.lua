@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed={ "lua_ls", "html", "pylsp" }
+    ensure_installed={ "lua_ls", "html", "pylsp", "clangd", "cmake" }
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -21,6 +21,12 @@ lspconfig.html.setup{
 }
 lspconfig.pylsp.setup{
     capabilities = capabilities,
+}
+lspconfig.clangd.setup{
+    capabilities=capabilities,
+}
+lspconfig.cmake.setup{
+    capabilities=capabilities,
 }
 
 local kmap = vim.keymap.set
