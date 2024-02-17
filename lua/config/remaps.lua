@@ -13,3 +13,5 @@ kmap("v", "<leader>y", "\"+y")
 
 kmap("n", "<C-h>", "<cmd>wincmd h<cr>")
 kmap("n", "<C-l>", "<cmd>wincmd l<cr>")
+kmap("n", "<C-k>", "<cmd>wincmd k<cr>")
+kmap("n", "<C-j>", "<cmd>wincmd j<cr>")
