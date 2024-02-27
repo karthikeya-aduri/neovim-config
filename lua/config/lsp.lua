@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed={ "lua_ls", "pylsp", "clangd", "cmake", "tsserver" }
+    ensure_installed={ "lua_ls", "cssls", "emmet_language_server","pylsp", "clangd", "cmake", "tsserver" }
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -17,8 +17,13 @@ lspconfig.lua_ls.setup{
     },
 }
 
+lspconfig.cssls.setup{
+    capabilities = capabilities,
+}
+
 lspconfig.emmet_language_server.setup{
-    capabilities=capabilities
+    filetypes = {'html'},
+    capabilities = capabilities,
 }
 
 lspconfig.pylsp.setup{
